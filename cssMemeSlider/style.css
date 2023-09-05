@@ -18,12 +18,13 @@ body {
 
 .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
     align-items: center;
     margin: 0 auto;
     width: 100%;
     min-height: 100vh;
-    padding: 0;
+    padding: 4%;
     background-color: rgb(30, 30, 30);
 }
 
@@ -42,6 +43,7 @@ body {
     height: 100%;
     border-radius: 3%;
     transition: 0.5s ease;
+    transform: translateX(0);
 }
 
 .slider-info-box {
@@ -49,24 +51,26 @@ body {
     max-width: 700px;
     margin-top: 4%;
     display: flex;
+    flex-direction: row-reverse;
     justify-content: space-between;
 }
 
 .slider-desc-box {
-    display: flex;
     overflow-x: hidden;
     width: 60%;
+    white-space: nowrap;
 }
 
 .slider-text {
+    display: inline-block;
+    width: 100%;
+    transition: 0.5s ease;
+    transform: translateX(0%);
     color: white;
     font-size: 1em;
     font-family: OpenSans;
     font-style: italic;
-    white-space: nowrap;
     margin: 0;
-    transition: 0.5s ease;
-    transform: translateX(0%);
 }
 
 .pagination-box {
@@ -77,10 +81,5 @@ body {
 }
 
 .pag-button {
-    width: 20px;
-    height: 20px;
-    border: none;
-    background-color: rgb(22, 77, 204);
     cursor: pointer;
-    border-radius: 24px;
 }
