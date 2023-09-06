@@ -14,6 +14,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+    background-color: rgb(30, 30, 30);
 }
 
 .container {
@@ -23,6 +24,7 @@ body {
     align-items: center;
     margin: 0 auto;
     width: 100%;
+    max-width: 900px;
     min-height: 100vh;
     padding: 4%;
     background-color: rgb(30, 30, 30);
@@ -34,50 +36,78 @@ body {
     overflow-x: hidden;
     margin: 0 auto;
     width: 100%;
-    max-width: 700px;
-    height: 60vh;
+    max-width: 900px;
+    height: 70vh;
+    filter: drop-shadow(0 10px 4px gray);
 }
 
 .img-meme {
     min-width: 100%;
     height: 100%;
     border-radius: 3%;
-    transition: 0.5s ease;
+    transition: 0.6s ease;
+}
+
+.pagination-box:has(> .button1:checked) ~ .slider-images *{
     transform: translateX(0);
 }
 
-.slider-info-box {
-    width: 100%;
-    max-width: 700px;
-    margin-top: 4%;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
+.pagination-box:has(> .button2:checked) ~ .slider-images * {
+    transform: translateX(-100%);
+}
+
+.pagination-box:has(> .button3:checked) ~ .slider-images * {
+    transform: translateX(-200%);
+}
+
+.pagination-box:has(> .button4:checked) ~ .slider-images * {
+    transform: translateX(-300%);
 }
 
 .slider-desc-box {
+    align-self: flex-start;
     overflow-x: hidden;
-    width: 60%;
+    width: 90%;
     white-space: nowrap;
+    margin-top: 4%;
 }
 
 .slider-text {
     display: inline-block;
     width: 100%;
-    transition: 0.5s ease;
+    transition: 0.6s ease;
     transform: translateX(0%);
     color: white;
-    font-size: 1em;
+    font-size: 2.5vw;
     font-family: OpenSans;
     font-style: italic;
     margin: 0;
 }
 
+.pagination-box:has(> .button1:checked) ~ .slider-desc-box *{
+    transform: translateX(0);
+}
+
+.pagination-box:has(> .button2:checked) ~ .slider-desc-box * {
+    transform: translateX(-100%);
+}
+
+.pagination-box:has(> .button3:checked) ~ .slider-desc-box * {
+    transform: translateX(-200%);
+}
+
+.pagination-box:has(> .button4:checked) ~ .slider-desc-box * {
+    transform: translateX(-300%);
+}
+
 .pagination-box {
     display: flex;
     justify-content: flex-end;
+    align-self: flex-end;
     gap: 4%;
     width: 25%;
+    margin-top: -4%;
+    z-index: 2;
 }
 
 .pag-button {
@@ -112,4 +142,15 @@ body {
     filter: none;
     background-color: rgb(30, 30, 30);
     border: 3px solid white;
+}
+
+@media only screen and (max-width: 600px) {
+    .pagination-box {
+        align-self: center;
+        margin-top: -11%;
+    }
+
+    .slider-desc-box {
+        margin-top: 11%;
+    }
 }
