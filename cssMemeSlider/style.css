@@ -119,29 +119,30 @@ body {
 
 .pag-button + label {
     cursor: pointer;
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
+    width: 28px;
+    height: 28px;
+    border-radius: 20px;
     background-color: rgb(93, 126, 231);
-    border: 3px solid rgb(62, 87, 170);
+    border: 6px solid rgb(30, 30, 30);
     transition: 0.2s;
 }
 
 .pag-button + label:hover {
-    border: 3px solid white;
-    filter: drop-shadow(0 0 3px rgb(170, 170, 170));
+    background-color: white;
 }
 
 .pag-button + label:active {
-    background-color: rgb(45, 62, 119);
-    border: 3px solid rgb(158, 157, 157);
+    background-color: rgb(144, 144, 144);
+}
+
+.pag-button:checked + label:hover {
+    outline: 2px solid rgb(164, 164, 164);
 }
 
 .pag-button:checked + label {
-    cursor: default;
-    filter: none;
     background-color: rgb(30, 30, 30);
-    border: 3px solid white;
+    outline-offset: -6px;
+    outline: 2px solid white;
 }
 
 @media only screen and (max-width: 600px) {
